@@ -25,7 +25,8 @@ body {
 }
 
 .navbar {
-    box-shadow: 0px 3px 5px #f7f7f7;
+    border-bottom: 1px solid #dadada;
+    // box-shadow: 0px 3px 5px #f7f7f7;
 }
 
 .wrapper {
@@ -34,12 +35,30 @@ body {
 .content {
     height: 25rem;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    .text {
+    .setup,
+    .punchline {
+        text-align: center;
         font-family: Dosis, sans-serif;
-        font-size: 2.2rem;
+    }
+
+    .setup {
+        font-size: 1.2rem;
+        padding-bottom: .4rem;
+    }
+
+    .punchline {
+        font-weight: 600;
+        font-size: 1.6rem;
+        padding-bottom: .8rem;
+    }
+
+    .type {
+        font-weight: lighter;
+        font-size: 1rem;
     }
 }
 
