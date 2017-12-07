@@ -45,11 +45,19 @@ class App extends Component {
                         </div>
                     </div>
                 </div>
-                
 
                 <div className="">
                     <div className="bottom-section">
+                        <button className="button facebook">
+                            <span className="icon">
+                                <i className="fa fa-facebook"></i>
+                            </span>
+                            Share to Facebook
+                        </button>
                         <button className="button is-info" onClick={ this._generateJokes }>
+                            <span className="icon">
+                                <i className="fa fa-refresh"></i>
+                            </span>
                             Generate Jokes
                         </button>
                     </div>

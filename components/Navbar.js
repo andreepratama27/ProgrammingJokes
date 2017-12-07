@@ -4,11 +4,11 @@ const Navbar = () => (
             <a className="navbar-item" href="https://bulma.io">
                 <strong>ProgrammingJokes</strong>
             </a>
-            <button className="navbar-burger">
+            {/* <button className="navbar-burger">
                 <span></span>
                 <span></span>
                 <span></span>
-            </button>
+            </button> */}
             
         </div>
     </nav>
