@@ -1,16 +1,17 @@
-import Navbar from './components/Navbar'
 import React, { Component } from 'react'
 import axios from 'axios'
+import Navbar from './components/Navbar'
+import { ShareButtons, ShareCounts, generateShareIcon } from 'react-share'
 
 class App extends Component {
     constructor(props) {
         super(props)
         this.state = {
             joke: [],
-            uri: 'https://08ad1pao69.execute-api.us-east-1.amazonaws.com/dev/random_joke'
+            uri: 'https://08ad1pao69.execute-api.us-east-1.amazonaws.com/dev/random_joke',
+            facebookID: '150121115544196'
         }
         this._generateJokes = this._generateJokes.bind(this)
-        this._generatePic = this._generatePic.bind(this)
     }
 
     componentDidMount() {
@@ -26,12 +27,10 @@ class App extends Component {
             })
     }
 
-    _generatePic() {
-        alert()
-    }
-
     render() {
         const { joke } = this.state
+        const { FacebookShareButton } = ShareButtons
+        const quote = `${joke.setup} - ${joke.punchline}`
 
         return (
             <div className="wrapper">
@@ -53,12 +52,14 @@ class App extends Component {
 
                 <div className="">
                     <div className="bottom-section">
-                        <button className="button facebook" onClick={ this._generatePic }>
-                            <span className="icon">
-                                <i className="fa fa-facebook"></i>
-                            </span>
-                            Share to Facebook
-                        </button>
+                        <FacebookShareButton url="andreepratama27.github.io" quote={ quote }>
+                            <button className="button facebook">
+                                <span className="icon">
+                                    <i className="fa fa-facebook"></i>
+                                </span>
+                                Share to Facebook
+                            </button>
+                        </FacebookShareButton>
                         <button className="button is-info" onClick={ this._generateJokes }>
                             <span className="icon">
                                 <i className="fa fa-refresh"></i>
