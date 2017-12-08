@@ -15,14 +15,14 @@ module.exports = {
     },
 
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader',
                 query: {
                     plugins: ['transform-runtime'],
-                    presets: ['react', 'es2016']
+                    presets: ['react', 'env']
                 }
             },
             {
@@ -37,12 +37,6 @@ module.exports = {
     },
 
     plugins: [
-        // new webpack.DefinePlugin({
-        //     'process.env': {
-        //         'NODE_ENV': JSON.stringify('production')
-        //     }
-        // }),
-
         new webpack.ProvidePlugin({
             'React': 'react',
             'ReactDOM': 'react-dom'
