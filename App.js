@@ -10,6 +10,7 @@ class App extends Component {
             uri: 'https://08ad1pao69.execute-api.us-east-1.amazonaws.com/dev/random_joke'
         }
         this._generateJokes = this._generateJokes.bind(this)
+        this._generatePic = this._generatePic.bind(this)
     }
 
     componentDidMount() {
@@ -23,6 +24,10 @@ class App extends Component {
                     joke: res.data
                 })
             })
+    }
+
+    _generatePic() {
+        alert()
     }
 
     render() {
@@ -48,7 +53,7 @@ class App extends Component {
 
                 <div className="">
                     <div className="bottom-section">
-                        <button className="button facebook">
+                        <button className="button facebook" onClick={ this._generatePic }>
                             <span className="icon">
                                 <i className="fa fa-facebook"></i>
                             </span>
