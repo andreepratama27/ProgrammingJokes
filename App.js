@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import Navbar from './components/Navbar'
-import { ShareButtons, ShareCounts, generateShareIcon } from 'react-share'
+import Content from './components/Content'
+import Bottom from './components/Bottom'
 
 class App extends Component {
     constructor(props) {
@@ -29,45 +30,13 @@ class App extends Component {
 
     render() {
         const { joke } = this.state
-        const { FacebookShareButton } = ShareButtons
         const quote = `${joke.setup} - ${joke.punchline}`
 
         return (
             <div className="wrapper">
                 <Navbar />
-
-                <div className="column">
-                    <div className="content">
-                        <div className="setup">
-                            { joke.setup }
-                        </div>
-                        <div className="punchline">
-                            { joke.punchline }
-                        </div>
-                        <div className="type">
-                            <i>Joke type - { joke.type }</i>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="">
-                    <div className="bottom-section">
-                        <FacebookShareButton url="andreepratama27.github.io" quote={ quote }>
-                            <button className="button facebook">
-                                <span className="icon">
-                                    <i className="fa fa-facebook"></i>
-                                </span>
-                                Share to Facebook
-                            </button>
-                        </FacebookShareButton>
-                        <button className="button is-info" onClick={ this._generateJokes }>
-                            <span className="icon">
-                                <i className="fa fa-refresh"></i>
-                            </span>
-                            Generate Jokes
-                        </button>
-                    </div>
-                </div>
+                <Content data={joke} />
+                <Bottom quote={quote} onClick={ this._generateJokes } />
             </div>
         )
     }
