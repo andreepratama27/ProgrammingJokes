@@ -3,10 +3,10 @@ var CACHE_NAME = 'simple-pwa-v1';
 var urlsToCache = [
   './',
   './manifest.json',
-  './build/bundle.js',
-  './build/style.css',
-  './build/39ffb3a01f6aa1178aa96ab869c76296.jpg',
-  './node_modules/bulma/css/bulma.css',
+  './bundle.js',
+  './style.css',
+  './39ffb3a01f6aa1178aa96ab869c76296.jpg',
+  '/node_modules/bulma/css/bulma.css',
 ];
 
 self.oninstall = function (e) {

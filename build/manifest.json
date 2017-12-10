@@ -3,22 +3,22 @@
     "short_name": "ProgrammerJokes",
     "icons": [
       {
-        "src":"./build/joke.png",
+        "src":"./joke.png",
         "sizes": "192x192",
         "type": "image/png"
       },
       {
-        "src":"./build/joke.png",
+        "src":"./joke.png",
         "sizes": "256x256",
         "type": "image/png"
       },
       {
-        "src":"./build/joke.png",
+        "src":"./joke.png",
         "sizes": "384x384",
         "type": "image/png"
       },
       {
-        "src":"./build/joke.png",
+        "src":"./joke.png",
         "sizes": "512x512",
         "type": "image/png"
       }
