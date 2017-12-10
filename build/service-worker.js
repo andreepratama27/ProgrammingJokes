@@ -5,8 +5,7 @@ var urlsToCache = [
   './manifest.json',
   './bundle.js',
   './style.css',
-  './39ffb3a01f6aa1178aa96ab869c76296.jpg',
-  '/node_modules/bulma/css/bulma.css',
+  './39ffb3a01f6aa1178aa96ab869c76296.jpg'
 ];
 
 self.oninstall = function (e) {
