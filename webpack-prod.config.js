@@ -2,6 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 const htmlWebpack = require('html-webpack-plugin')
 const extractTextPlugin = require('extract-text-webpack-plugin')
+const copyPlugin = require('copy-webpack-plugin')
 
 module.exports = {
     entry: [
@@ -56,6 +57,10 @@ module.exports = {
             'ReactDOM': 'react-dom'
         }),
 
+        new webpack.optimize.UglifyJsPlugin({
+            minimize: true
+        }),
+
         new extractTextPlugin('style.css'),
 
         new htmlWebpack({
@@ -64,8 +69,9 @@ module.exports = {
             inject: 'body' 
         }),
 
-        new webpack.optimize.UglifyJsPlugin({
-            minimize: true
-        })
+        new copyPlugin([
+            { from: './service-worker.js', to: './' },
+            { from: './manifest.json', to: './' }
+        ]),
     ]
 }
